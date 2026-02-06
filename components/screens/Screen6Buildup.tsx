@@ -44,7 +44,7 @@ export default function Screen6Buildup({ onNext, onPrev }: ScreenProps) {
       <motion.div
         initial={{ scale: 0 }}
         animate={{ scale: 1 }}
-        transition={{ delay: 0.3, type: "spring" }}
+        transition={{ delay: 1, type: "spring" }}
         className="mb-8 z-10"
       >
         <span className="text-9xl">🎁</span>
@@ -53,7 +53,7 @@ export default function Screen6Buildup({ onNext, onPrev }: ScreenProps) {
       <motion.h2
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 0.6 }}
+        transition={{ delay: 1.3 }}
         className="text-4xl font-bold text-gray-800 mb-6 z-10"
       >
         Y ahora...
@@ -62,7 +62,7 @@ export default function Screen6Buildup({ onNext, onPrev }: ScreenProps) {
       <motion.p
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: 1, scale: 1 }}
-        transition={{ delay: 0.9 }}
+        transition={{ delay: 1.5 }}
         className="text-2xl text-gray-700 mb-8 max-w-md z-10"
       >
         Todo esto ha sido la presentación de algo especial que tengo para vos 👀
@@ -71,7 +71,7 @@ export default function Screen6Buildup({ onNext, onPrev }: ScreenProps) {
       <motion.div
         initial={{ opacity: 0 }}
         animate={{ opacity: 1 }}
-        transition={{ delay: 1.2 }}
+        transition={{ delay: 1.9 }}
         className="z-10"
       >
         <motion.button
@@ -113,7 +113,7 @@ export default function Screen6Buildup({ onNext, onPrev }: ScreenProps) {
       <motion.div
         initial={{ opacity: 0, y: 20 }}
         animate={{ opacity: 1, y: 0 }}
-        transition={{ delay: 1.5 }}
+        transition={{ delay: 2.2 }}
         className="flex gap-4 z-10"
       >
         <motion.button
