@@ -118,7 +118,7 @@ export default function Screen7Reveal({ onPrev, onReset }: ScreenProps) {
           transition={{ delay: 4.2, type: "spring" }}
           className="mb-4"
         >
-          <span className="text-6xl">🎤✈️</span>
+          <span className="text-4xl">🎤✈️</span>
         </motion.div>
 
         <div className="space-y-3 text-base text-gray-800">

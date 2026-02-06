@@ -31,14 +31,14 @@ export default function Screen3Present({ onNext, onPrev }: ScreenProps) {
         transition={{ delay: 0.4, type: "spring" }}
         className="w-full max-w-sm aspect-square bg-white/50 rounded-3xl shadow-xl overflow-hidden flex items-center justify-center relative"
       >
-        {
-          <Image
-            src="/images/present.jpg"
-            alt="Nuestro presente"
-            fill
-            className="object-cover rotate-90"
-          />
-        }
+        <Image
+          src="/images/present.jpg"
+          alt="Nuestro presente"
+          fill
+          sizes="(max-width: 768px) 100vw, 500px"
+          priority
+          className="object-cover rotate-90"
+        />
       </motion.div>
 
       <motion.div
