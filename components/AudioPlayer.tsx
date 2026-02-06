@@ -16,7 +16,7 @@ export default function AudioPlayer({
   const [isPlaying, setIsPlaying] = useState(false);
   const [showButton, setShowButton] = useState(false);
   const [currentTrack, setCurrentTrack] = useState(
-    "/audio/bruno-mars.mp3",
+    "/audio/coldplay.mp3",
   );
 
   const startAudio = () => {

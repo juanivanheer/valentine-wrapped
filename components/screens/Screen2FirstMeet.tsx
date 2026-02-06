@@ -49,7 +49,7 @@ export default function Screen2FirstMeet({ onNext, onPrev }: ScreenProps) {
       >
         <p className="text-lg text-gray-700 leading-relaxed mb-8">
           Recuerdo perfectamente ese día. Tu sonrisa iluminó todo y supe que
-          algo especial estaba comenzando...
+          algo especial estaba comenzando ❤️
         </p>
 
         <div className="flex gap-4 justify-center">

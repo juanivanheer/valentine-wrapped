@@ -41,8 +41,8 @@ export default function Screen1Welcome({ onNext }: ScreenProps) {
         transition={{ delay: 0.8 }}
         className="text-lg text-gray-700 mb-8 max-w-sm"
       >
-        Estos años estuvieron llenos de momentos increíbles con vos.
-        Desliza para descubrir algo especial.
+        Gracias por tantos momentos juntos.
+        Espero que este regalo te guste tanto como a mí me gustó prepararlo para ti. Te amo mucho ❤️
       </motion.p>
 
       <motion.button

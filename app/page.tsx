@@ -36,6 +36,22 @@ export default function Home() {
   const [bgColor, setBgColor] = useState(pastelColors[0]);
   const audioStartRef = useRef<(() => void) | null>(null);
   const audioChangeTrackRef = useRef<((track: string) => void) | null>(null);
+  const videoRef = useRef<HTMLVideoElement | null>(null);
+
+  useEffect(() => {
+    const video = document.createElement("video");
+    video.preload = "auto";
+    video.src = "/images/bruno-mars.webm";
+    video.load();
+    videoRef.current = video;
+
+    return () => {
+      if (videoRef.current) {
+        videoRef.current.src = "";
+        videoRef.current.load();
+      }
+    };
+  }, []);
 
   const nextScreen = () => {
     if (currentScreen < screens.length - 1) {
@@ -58,7 +74,7 @@ export default function Home() {
     setCurrentScreen(0);
     setBgColor(pastelColors[0]);
     if (audioChangeTrackRef.current) {
-      audioChangeTrackRef.current("/audio/bruno-mars.mp3");
+      audioChangeTrackRef.current("/audio/coldplay.mp3");
     }
   };
 
@@ -78,9 +94,6 @@ export default function Home() {
 
   const CurrentScreenComponent = screens[currentScreen];
 
-  // Transición especial lenta para pantalla 6 -> 7
-  const isRevealTransition = currentScreen === 6 && direction === 1;
-
   const variants = {
     enter: (direction: number) => ({
       x: direction > 0 ? 1000 : -1000,
@@ -97,14 +110,14 @@ export default function Home() {
   };
 
   const getTransition = () => {
-    // Transición lenta de 3 segundos para la revelación
-    if (currentScreen === 6) {
+    // Transición lenta de 3 segundos solo cuando vamos ADELANTE de pantalla 6 a 7
+    if (currentScreen === 5 && direction === 1) {
       return {
         x: { type: "spring", stiffness: 50, damping: 20 },
         opacity: { duration: 3 },
       };
     }
-    // Transición normal para otras pantallas
+    // Transición normal para todas las demás situaciones
     return {
       x: { type: "spring", stiffness: 300, damping: 30 },
       opacity: { duration: 0.2 },
@@ -124,7 +137,7 @@ export default function Home() {
       />
 
       <div className="w-full max-w-md h-screen relative">
-        <AnimatePresence initial={false} custom={direction} mode="wait">
+        <AnimatePresence initial={true} custom={direction} mode="wait">
           <motion.div
             key={currentScreen}
             custom={direction}
@@ -147,6 +160,7 @@ export default function Home() {
               onReset={resetToStart}
               isFirst={currentScreen === 0}
               isLast={currentScreen === screens.length - 1}
+              preloadedVideoRef={currentScreen === 6 ? videoRef : undefined} // Añadir esta prop
             />
           </motion.div>
         </AnimatePresence>

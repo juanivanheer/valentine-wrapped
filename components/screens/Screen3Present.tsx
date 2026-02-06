@@ -37,7 +37,7 @@ export default function Screen3Present({ onNext, onPrev }: ScreenProps) {
           fill
           sizes="(max-width: 768px) 100vw, 500px"
           priority
-          className="object-cover rotate-90"
+          className="object-cover"
         />
       </motion.div>
 
@@ -48,8 +48,8 @@ export default function Screen3Present({ onNext, onPrev }: ScreenProps) {
         className="text-center"
       >
         <p className="text-lg text-gray-700 leading-relaxed mb-8">
-          Hoy, cada momento a tu lado es perfecto. Compartir la vida con vos es
-          mi mayor tesoro...
+          Hoy, cada momento a tu lado es perfecto. Gracias por ser mi compañera
+          de vida y por hacer que cada día sea especial.
         </p>
 
         <div className="flex gap-4 justify-center">

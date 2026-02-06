@@ -80,7 +80,7 @@ export default function Screen6Buildup({ onNext, onPrev }: ScreenProps) {
           onClick={() => setShowHint(true)}
           className="bg-white/80 text-gray-800 px-8 py-4 rounded-full font-semibold text-lg shadow-xl mb-6"
         >
-          Dame una pista 🤔
+          Presiona para pistas!!
         </motion.button>
 
         {showHint && (

@@ -9,16 +9,21 @@ interface ScreenProps {
   onReset: () => void;
   isFirst: boolean;
   isLast: boolean;
+  preloadedVideoRef?: React.RefObject<HTMLVideoElement>;
 }
 
-export default function Screen7Reveal({ onPrev, onReset }: ScreenProps) {
+export default function Screen7Reveal({
+  onPrev,
+  onReset,
+  preloadedVideoRef,
+}: ScreenProps) {
   const [showConfetti, setShowConfetti] = useState(false);
   const [showBackground, setShowBackground] = useState(false);
   const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     const confettiTimer = setTimeout(() => setShowConfetti(true), 3500);
-    const backgroundTimer = setTimeout(() => setShowBackground(true), 6000);
+    const backgroundTimer = setTimeout(() => setShowBackground(true), 3300);
 
     return () => {
       clearTimeout(confettiTimer);
@@ -47,11 +52,11 @@ export default function Screen7Reveal({ onPrev, onReset }: ScreenProps) {
             loop
             muted
             playsInline
-            preload="auto"
+            src={preloadedVideoRef?.current?.src || "/images/bruno-mars.webm"}
           >
-            <source src="/images/bruno-mars.webm" type="video/webm" />
+            {/*<source src="/images/bruno-mars.webm" type="video/webm" />*/}
           </video>
-          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/70 to-white/90" />
+          <div className="absolute inset-0 bg-gradient-to-b from-transparent via-white/70" />
         </motion.div>
       )}
 
@@ -118,7 +123,7 @@ export default function Screen7Reveal({ onPrev, onReset }: ScreenProps) {
           transition={{ delay: 4.2, type: "spring" }}
           className="mb-4"
         >
-          <span className="text-4xl">🎤✈️</span>
+          <span className="text-4xl">🎤 ✈️</span>
         </motion.div>
 
         <div className="space-y-3 text-base text-gray-800">
