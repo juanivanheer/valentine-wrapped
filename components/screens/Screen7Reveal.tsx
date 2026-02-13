@@ -183,7 +183,7 @@ export default function Screen7Reveal({
         transition={{ delay: 5.2 }}
         className="text-lg text-gray-800 max-w-md z-10 mb-4 font-medium"
       >
-        Porque te mereces el mundo entero,
+        Te amo mucho, te mereces el mundo entero,
         <br />y este es solo el comienzo... 💕
       </motion.p>
 

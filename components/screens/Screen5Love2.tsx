@@ -39,7 +39,7 @@ export default function Screen5Love2({ onNext, onPrev }: ScreenProps) {
         {[
           { emoji: "☕", text: "Los desayunos compartidos" },
           { emoji: "🎬", text: "Cada serie que vimos juntos" },
-          { emoji: "🎵", text: "Bailar sin razón en el living" },
+          { emoji: "💃🏼", text: "Bailar sin razón en el living" },
           { emoji: "🤗", text: "Tus abrazos que lo curan todo" },
         ].map((item, i) => (
           <motion.div
